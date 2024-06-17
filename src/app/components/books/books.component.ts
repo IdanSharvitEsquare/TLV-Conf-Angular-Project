@@ -3,6 +3,7 @@ import {
   OnInit,
   PLATFORM_ID,
   TransferState,
+  afterNextRender,
   inject,
   makeStateKey,
 } from '@angular/core';
@@ -25,6 +26,12 @@ export class BooksComponent implements OnInit {
   transferState = inject(TransferState);
   books: Book[] = [];
 
+  // constructor() {
+  //   afterNextRender(() => {
+  //     console.log(localStorage.getItem('token'));
+  //   });
+  // }
+
   ngOnInit(): void {
     // if (this.transferState.hasKey<Book[]>(makeStateKey<Book[]>('books'))) {
     //   this.books = this.transferState.get<Book[]>(
@@ -32,7 +39,7 @@ export class BooksComponent implements OnInit {
     //     []
     //   );
     // } else {
-      this.fetchAllBooks();
+    this.fetchAllBooks();
     // }
   }
 
