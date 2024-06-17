@@ -1,5 +1,4 @@
 import { AfterViewInit, Component, ElementRef, ViewChild, inject } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -13,8 +12,6 @@ export class HomeComponent implements AfterViewInit {
   @ViewChild('hamburger') hamburger!: ElementRef;
   @ViewChild('menu') menu!: ElementRef;
 
-  private router = inject(Router);
-
   ngAfterViewInit(): void {
     this.hamburger.nativeElement.addEventListener('click', () => {
       const menu = this.menu.nativeElement;
@@ -24,9 +21,5 @@ export class HomeComponent implements AfterViewInit {
         menu.classList.add('show');
       }
     });
-  }
-
-  navigateToCards(): void {
-    this.router.navigate(['cards']);
   }
 }
