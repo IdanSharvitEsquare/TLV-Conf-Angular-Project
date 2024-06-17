@@ -12,10 +12,10 @@ import { AsyncPipe } from '@angular/common';
   styleUrl: './books.component.scss'
 })
 export class BooksComponent implements OnInit {
-  booksService = inject(BookService);
+  bookService = inject(BookService);
   books$: Observable<Book[]> | undefined;
 
   ngOnInit(): void {
-      this.books$ = this.booksService.getBooks()
+      this.books$ = this.bookService.getBooks()
   }
 }
