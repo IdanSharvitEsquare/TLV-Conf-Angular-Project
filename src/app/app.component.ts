@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
@@ -8,19 +8,6 @@ import { RouterOutlet } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent implements AfterViewInit {
+export class AppComponent {
   title = 'angular-tlv-conf';
-  @ViewChild('hamburger') hamburger!: ElementRef;
-  @ViewChild('menu') menu!: ElementRef;
-
-  ngAfterViewInit(): void {
-    this.hamburger.nativeElement.addEventListener('click', () => {
-      const menu = this.menu.nativeElement;
-      if (menu.classList.contains('show')) {
-        menu.classList.remove('show');
-      } else {
-        menu.classList.add('show');
-      }
-    });
-  }
 }
