@@ -1,7 +1,7 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { Book } from '../../interfaces/book.interface';
 import { BookService } from '../../services/book.service';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 import { AsyncPipe } from '@angular/common';
 
 @Component({
@@ -16,6 +16,10 @@ export class BooksComponent implements OnInit {
   books$: Observable<Book[]> | undefined;
 
   ngOnInit(): void {
-      this.books$ = this.bookService.getBooks()
+      this.fetchAllBooks();
+  }
+
+  private fetchAllBooks(): void {
+    this.books$ = this.bookService.getBooks();
   }
 }
