@@ -11,6 +11,6 @@ export class BookService {
   private apiUrl = 'https://potterapi-fedeperin.vercel.app/en/';
 
   getBooks(): Observable<Book[]> {
-    return this.http.get<Book[]>(this.apiUrl);
+    return this.http.get<Book[]>(this.apiUrl + 'books');
   }
 }

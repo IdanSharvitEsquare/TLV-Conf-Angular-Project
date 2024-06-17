@@ -1,0 +1,10 @@
+<main>
+  @for (book of (books$ | async); track $index) {
+  <div>
+    <img [src]="book.cover" alt="book title" />
+    <h1>{{ book.title }}</h1>
+    <p>{{ book.description }}</p>
+    <h5>{{ book.releaseDate }}</h5>
+  </div>
+  }
+</main>
