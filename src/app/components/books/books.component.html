@@ -1,5 +1,5 @@
 <main>
-  @for (book of (books$ | async); track book.title) {
+  @for (book of books; track book.title) {
   <div>
     <img [src]="book.cover" alt="book.title" />
     <h1>{{ book.title }}</h1>
