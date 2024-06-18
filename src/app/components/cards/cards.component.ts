@@ -8,5 +8,6 @@ import { BrokenComponent } from '../broken/broken.component';
   imports: [CardComponent, BrokenComponent],
   templateUrl: './cards.component.html',
   styleUrl: './cards.component.scss',
+  // host: { ngSkipHydration: 'true' },
 })
 export class CardsComponent {}
