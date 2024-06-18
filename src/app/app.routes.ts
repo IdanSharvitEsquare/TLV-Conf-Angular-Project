@@ -14,6 +14,13 @@ export const routes: Routes = [
       ),
   },
   {
+    path: 'cards',
+    loadComponent: () =>
+      import('./components/cards/cards.component').then(
+        (m) => m.CardsComponent
+      ),
+  },
+  {
     path: '**',
     redirectTo: 'home',
   },
