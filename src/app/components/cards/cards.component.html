@@ -1,7 +1,17 @@
-<div class="container">
-  <app-card></app-card>
-  <app-card></app-card>
-  <app-card></app-card>
-  <app-card></app-card>
-  <app-broken></app-broken>
-</div>
+<main>
+  <section>
+    <app-broken></app-broken>
+    <app-card></app-card>
+    <app-card></app-card>
+  </section>
+
+  <section>
+    <app-card ngSkipHydration></app-card>
+    <app-card></app-card>
+  </section>
+
+  <section>
+    <app-card></app-card>
+    <app-card></app-card>
+  </section>
+</main>
